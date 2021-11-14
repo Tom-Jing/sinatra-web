@@ -25,7 +25,6 @@ GEM
       data_objects (= 0.10.17)
     eventmachine (1.2.7)
     ffi (1.15.4)
-    multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     pg (1.2.3)
@@ -47,16 +46,9 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    sinatra-contrib (2.1.0)
-      multi_json
-      mustermann (~> 1.0)
-      rack-protection (= 2.1.0)
-      sinatra (= 2.1.0)
-      tilt (~> 2.0)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
-    sqlite3 (1.4.2)
     temple (0.8.2)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
@@ -76,9 +68,7 @@ DEPENDENCIES
   pg
   sass
   sinatra
-  sinatra-contrib
   slim
-  sqlite3
   thin
 
 BUNDLED WITH
