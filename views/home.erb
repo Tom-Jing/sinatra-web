@@ -1,0 +1,19 @@
+<h1>Welcome to the gambling site.</h1>
+<br>
+<% if session[:user] %>
+    <p>You are logged in! <%= session[:validLogin]%></p>
+    <form action="/gamb", method="get">  
+        Ckick to start game <input type="submit", name="submit", value="Game">
+    </form>
+    <br>
+    <form action="/logout", method="post">  
+        <input type="submit", name="submit", value="Quit">
+    </form>
+<% else %>
+    <p><%= session[:validLogin]%></p>
+    <p><a href="/login">log in</a> to gamble</p>
+    <p><a href="/signup">sign up</a> to to create account</p>
+<% end %>
+
+
+

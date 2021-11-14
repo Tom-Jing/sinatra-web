@@ -1,0 +1,59 @@
+html{
+    background-color:antiquewhite;
+}
+
+body{
+    width: 700px;
+    height: 900px;
+    background-color: aquamarine;
+    margin: 3em auto 3em;
+    padding: 25px;
+    position: relative;
+}
+
+.header{
+    display: flex;
+    background-color:cadetblue;
+}
+
+img{
+    background-color: transparent;
+    width: 50%;
+}
+
+.header h1{
+    font-family: Segoe Script; 
+    color: black;
+    float: left;
+    margin: auto;
+}
+
+.nav_bar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: coral;
+    overflow: hidden;
+    width: 100%;
+}
+
+li{
+    float: left;
+    display: block;
+    padding: 8px;
+}
+
+ul li a {
+    text-decoration: none;
+    display: block;
+    background-color:transparent;
+    color: #ffffff;
+}
+
+
+a:hover {
+    background: cornflowerblue;
+}
+
+
+

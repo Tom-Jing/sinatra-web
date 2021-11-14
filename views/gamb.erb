@@ -1,0 +1,107 @@
+<style>
+    .upper {
+        width: 700px;
+        height: 250px;
+    }
+
+    .placeBet {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 50%;
+        float: left;
+    }
+
+    .curStatus {
+        width: 30%;
+        float: left;
+        padding: 10px;
+        margin-left: 50px;
+        border: 3px solid black;
+    }
+
+    .accStatus {
+        width: 650px;
+        height: 100px;
+        border: 3px solid black;
+    }
+
+    #beton{
+        margin-left: 50px;
+    }
+
+    #bet{
+        margin-left: 155px;
+        width: 100px;
+        padding: 10px;
+    }
+
+    #quit{
+        width: 100px;
+        padding: 10px;
+    }
+
+    #account{
+        padding: 10px;
+        margin-bottom:50px;
+    }
+
+    .final{
+        margin: 19px;
+        float:left;
+    }
+
+</style>
+
+<div class="upper">
+    <h2>Place your bet on dice number (1 to 6), get 2X of your money if win</h2>
+    <p><%= session[:result] %><%= @random %></p>
+    <div class="placeBet">
+        <form action="/placeBet" method='post'>
+            Bet money: <input id="betAmount" name="betAmount" type="text"><br>
+            <br>
+            On: <input id="beton" name="betOn" type="text"><br>
+            <br>
+            <input id="bet"type="submit" value="Bet">
+        </form>
+    </div>
+
+
+    <div class="curStatus">
+        <label class="curLabel"> Current Status:</label><br>
+        <br>
+        <label class="curLabel"> Total Win: </label>
+        <input class="curInput" type="text" value="<%= session[:win] || 0 %>" readonly>
+        <br>
+        <label class="curLabel"> Total Loss: </label>
+        <input class="curInput" type="text" value="<%= session[:lose] || 0 %>" readonly>
+        <br>
+        <label class="curLabel"> Total Profit: </label>
+        <input class="curInput" type="text" value="<%= session[:profit] || 0 %>" readonly>
+        <br>
+    </div>
+</div>
+
+<label id="account">Account Summery:<label><br>
+<br>
+<div class="accStatus">
+    <div class="final">
+        <label class="accLabels"> Total Win: </label><br>
+        <br>
+        <input class="accInput" type="text" value="<%= session[:totalWin] || 0 %>" readonly>
+    </div>
+    <div class="final">
+        <label class="accLabels1"> Total Loss: </label><br>
+        <br>
+        <input class="accInput" type="text" value="<%= session[:totalLost] || 0 %>" readonly>
+    </div>
+    <div class="final">
+        <label class="accLabels1"> Total Profit: </label><br>
+        <br>
+        <input class="accInput" type="text" value="<%= session[:totalProfit] || 0 %>" readonly>
+    </div>
+</div>
+
+<br>
+<form action="/logout", method="post">  
+    <input id="quit", type="submit", name="submit", value="Quit">
+</form>

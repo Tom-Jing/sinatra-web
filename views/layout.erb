@@ -1,0 +1,27 @@
+<html>
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <title><%= @title || "Gambling Site" %></title> 
+</head>
+<body>
+    <div class="header">
+        <img src="images/casino.png" alt="casino">
+        <h1>Gambling Site</h1>
+    </div>
+    <ul class="nav_bar">
+        <li><a class="nav" href="/home"><b>Home</b></a></li>
+        <li><a class="nav" href="/about"><b>About</b></a></li>
+
+        <% if session[:user] %>
+            <li><a class="nav" href="/gamb"><b>Game</b></a></li>
+            <li><a class="nav" href="/logout"><b>logout</b></a></li>
+        <% else %>
+            <li><a class="nav" href="/login"><b>login</b></a></li>
+            <li><a class="nav" href="/signup"><b>Sign up</b></a></li>
+        <% end %>
+    </ul>
+    
+    <%= yield %>
+
+</body>
+</html>
