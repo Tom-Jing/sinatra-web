@@ -8,4 +8,4 @@ gem "thin"
 gem "sinatra-contrib" # reloader
 gem "pg"
 gem "dm-postgres-adapter"
-gem "dm-sqlite-adapter", :group => :developmentß
+gem "dm-sqlite-adapter", :group => :development
