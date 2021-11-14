@@ -93,18 +93,24 @@ post '/login' do
 end
 
 post '/signup' do
-    player = Player.new
-    player.username = params[:username]
-    player.password = params[:password]
-    player.totalWin = 0
-    player.totalLost = 0
-    player.totalProfit = 0
-    if params[:username].empty? || params[:password].empty?
-        session[:validLogin] = "Invalid entry, please fill again."
+    if Player.get(params[:username]) != nil
+        session[:validSign] = "User already exist! Try different name"
         redirect to ('/signup')
     else
-        player.save
-        redirect to ('/home')
+        player = Player.new
+        player.username = params[:username]
+        player.password = params[:password]
+        player.totalWin = 0
+        player.totalLost = 0
+        player.totalProfit = 0
+        if params[:username].empty? || params[:password].empty?
+            session[:validSign] = "Invalid entry, please fill again."
+            redirect to ('/signup')
+        else
+            session[:validLogin] = "Success, welcome new member!"
+            player.save
+            redirect to ('/home')
+        end
     end
 end
 
