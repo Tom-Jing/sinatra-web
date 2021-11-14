@@ -13,3 +13,6 @@ end
 configure :production do
     DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
+
+
+Player.auto_migrate! unless DataMapper.repository(:default).adapter.storage_exists?('players')
