@@ -15,4 +15,4 @@ configure :production do
 end
 
 
-Player.auto_migrate! unless DataMapper.repository(:default).adapter.storage_exists?('players')
+Player.auto_migrate!
