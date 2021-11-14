@@ -107,9 +107,9 @@ post '/signup' do
             session[:validSign] = "Invalid entry, please fill again."
             redirect to ('/signup')
         else
-            session[:validLogin] = "Success, welcome new member!"
+            session[:validLogin] = "Success, welcome new member! Please login"
             player.save
-            redirect to ('/home')
+            redirect to ('/login')
         end
     end
 end
