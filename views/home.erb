@@ -3,7 +3,7 @@
 <% if session[:user] %>
     <p>You are logged in! <%= session[:validLogin]%></p>
     <form action="/gamb", method="get">  
-        Ckick to start game <input type="submit", name="submit">
+        Ckick to start game <input type="submit", name="submit", value="Game">
     </form>
     <br>
     <form action="/logout", method="post">  
