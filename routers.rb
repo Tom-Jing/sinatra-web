@@ -20,19 +20,30 @@ get '/about' do
 end
 
 get '/login' do
-    @title = "Log in"
-    erb :login
+    if session[:user] == true
+        redirect "/gamb"
+    else
+        @title = "Log in"
+        erb :login
+    end
 end
 
 get '/signup' do
-    @title = "Sign up"
-    erb :signup
+    if session[:user] == true
+        redirect "/gamb"
+    else
+        @title = "Sign up"
+        erb :signup
+    end
 end
 
 get '/logout' do
     if session[:user] != true
         redirect to ('/home')
     else
+        user = Player.get(session[:username])
+        user.update(:totalWin => user.totalWin + session[:win].to_i, :totalLost => user.totalLost + session[:lose].to_i, 
+            :totalProfit => user.totalProfit + session[:profit].to_i)
         @title = "logout"
         session.clear
         erb :logout
@@ -44,6 +55,7 @@ get '/gamb' do
         session[:validLogin] = "Please login or sign up first before start game!"
         erb :home
     else
+        @title = "Game on"
         erb :gamb
     end
 end
@@ -69,8 +81,7 @@ post '/login' do
             session[:win] = 0
             session[:lose] = 0
             session[:profit] = 0
-            @title = "Game on"
-            erb :gamb
+            redirect "/gamb"
         else
             session[:validLogin] = "Invalid username/password, please try again"
             erb :login
