@@ -14,7 +14,7 @@ https://sintra-gambapp.herokuapp.com
     ref: "https://stackoverflow.com/questions/6040583/cant-find-the-libpq-fe-h-header-when-trying-to-install-pg-gem"
 
 2. run: "ruby player.rb" to create a database file in current directory
-3. run: "ruby main.rb", go to your browser enter "localhost:4567" and sign up
+3. run: "ruby main.rb" go to your browser enter "localhost:4567" and sign up
 ```
 <br />
 
