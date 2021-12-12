@@ -1,19 +1,23 @@
-This website is written in Ruby and Sinatra by Yuguang Jing
+## Online Casino Store(guessing dice)
+This website is written in Ruby and used Sinatra as web application framework, practice project :)
+<br />
 
-Address: https://sintra-gambapp.herokuapp.com/
-Test: Yjing097/test
-
-
-If you want to try on ur own machine, please use macOS(windows will cause error)
-
-step 1: make sure you have installed bundler, "gem install bundler"
-
-Optional: if you got the error because of: "pg" and "do_postgresql" please enter this line in your terminal: "brew install postgresql"
-ref: "https://stackoverflow.com/questions/6040583/cant-find-the-libpq-fe-h-header-when-trying-to-install-pg-gem"
+## Live demo
+https://sintra-gambapp.herokuapp.com
+<br />
 
 
-(.db file already created for u to test, use "Yjing097/qweasdsc" to login or sign up to create a new account to test, if want a new db please delete player.db and read step 2)
-step 2: run: "ruby player.rb" to create a database file in current directory
+## Run this project on local
+```
+1. make sure you have installed bundler, "gem install bundler"
+    Optional: if you got the error because of: "pg" and "do_postgresql" please enter this line in your terminal: "brew install postgresql"
+    ref: "https://stackoverflow.com/questions/6040583/cant-find-the-libpq-fe-h-header-when-trying-to-install-pg-gem"
+
+2. run: "ruby player.rb" to create a database file in current directory
+3. run: "ruby main.rb", go to your browser enter "localhost:4567" and sign up
+```
+<br />
 
 
-step 3: run: "ruby main.rb", go to your browser enter "localhost:4567" and sign up
+## Test Account
+Yjing097/test
